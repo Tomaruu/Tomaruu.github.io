@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shimo Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shimo Calculator</h1>
+        
+        <div class="calculator">
+            <div class="input-group">
+                <label for="baseSpeed">Base Movement Speed (ft):</label>
+                <input type="number" id="baseSpeed" min="0" value="75">
+            </div>
+            
+            <div class="input-group">
+                <label for="conMod">Constitution Modifier:</label>
+                <input type="number" id="conMod" min="-5" max="10" value="6">
+            </div>
+            
+            <div class="input-group">
+                <label for="allocatedSpeed">Speed Allocated for Movement (ft):</label>
+                <input type="number" id="allocatedSpeed" min="0" value="0">
+            </div>
+            
+            <div class="input-group">
+                <label>Speed Multipliers:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="dash1"> Dash (Bonus Action) x2</label>
+                    <label><input type="checkbox" id="dash2"> Dash (Extra Attack) x2</label>
+                    <label><input type="checkbox" id="feline"> Feline Agility x2</label>
+                    <label><input type="checkbox" id="boots"> Boots of Speed x2</label>
+                </div>
+                <div class="auto-active">
+                    <span>Fast Pace x2 (auto when dashing)</span>
+                </div>
+            </div>
+            
+            <button onclick="calculateDamage()">Calculate Damage</button>
+            
+            <div class="result">
+                <h3>Total Speed: <span id="totalSpeed">75</span> ft</h3>
+                <h3>Damage: <span id="damage">0</span></h3>
+                <p id="formula"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
